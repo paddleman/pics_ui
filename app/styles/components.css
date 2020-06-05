@@ -1,0 +1,30 @@
+.list-item {
+  @apply border rounded border-2 border-black bg-gray-100 px-4 py-1 my-3;
+}
+
+.list-item:hover {
+  @apply bg-yellow-500 text-white;
+}
+
+.add-btn {
+  @apply bg-yellow-100 text-black font-semibold  py-2 px-4 border border-black  rounded;
+}
+
+.add-btn:hover {
+  @apply bg-yellow-500 text-white border-transparent;
+}
+
+.std-input {
+  @apply bg-gray-300 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight;
+}
+.std-input:focus {
+  @apply outline-none bg-yellow-100 border-black;
+}
+
+.logging-btn {
+ @apply inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white; 
+}
+
+.logging-btn:hover {
+  @apply border-transparent text-teal-500 bg-white;
+}
