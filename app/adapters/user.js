@@ -3,7 +3,9 @@ import ApplicationAdapter from './application';
 
 export default class UserAdapter extends ApplicationAdapter {
 
-    urlForQueryRecord(query) {
+  // api requires that login creds be routed to /users/me 
+
+  urlForQueryRecord(query) {
       let originalUrl = super.urlForQueryRecord(...arguments);
       if (query.me) {
         delete query.me;

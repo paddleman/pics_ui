@@ -11,9 +11,13 @@ export default class ApplicationAdapter extends JSONAPIAdapter {
   @tracked 'session.data.authenticated.token';
 
   get headers() {
-    return {
-      'Authorization': `Bearer ${this.session.data.authenticated.token}`
+    if (this.session.isAuthenticated) {
+      return {
+        'Authorization': `Bearer ${this.session.data.authenticated.token}`
+      }
     }
+    
+    return {}
   }
 
   // found header example in ember adapter docs to avoid @computed in favour of @tracked and get
@@ -24,9 +28,8 @@ export default class ApplicationAdapter extends JSONAPIAdapter {
   //   if (this.session.isAuthenticated) {
   //     headers['Authorization'] = `Bearer ${this.session.data.authenticated.token}`;
   //   }
-  //   console.log(headers);
+  //   
   //   return headers;
-
   // }
 
 }
