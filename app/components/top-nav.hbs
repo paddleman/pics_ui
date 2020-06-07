@@ -26,19 +26,22 @@
       </button>
     </div>
 
-    {{!-- {{#if this.session.isAuthenticated}}
+
+    {{#if this.session.isAuthenticated}}
+      <div class="logging-btn">
+        {{this.currentUser.user.username}} ||  id: {{this.currentUser.user.id}}
+      </div>
       <div>
         <button type="button" class="logging-btn" {{on "click" this.logout}}>Logout</button>
       </div>
     {{else}}
-    {{/if}} --}}
+      <div>
+        <LinkTo @route="login" class="logging-btn" >Login</LinkTo>
+      </div>
       <div>
         <LinkTo @route = "register" class="mx-1 logging-btn" >Register</LinkTo>
       </div>
-
-      <div>
-        <LinkTo @route = "index" class="logging-btn" >Login</LinkTo>
-      </div>
+    {{/if}}
 
   </div>
 </nav>
